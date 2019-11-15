@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dogsRouter = require('./dogs/dogs-router');
 const catsRouter = require('./cats/cats-router');
+const peepRouter = require('./people/people-router');
 const { PORT, CLIENT_ORIGIN } = require('./config');
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors({
 
 app.use('/api/dog', dogsRouter);
 app.use('/api/cat', catsRouter);
+app.use('/api/people', peepRouter);
 
 // Catch-all 404
 app.use((req, res, next) => {
@@ -31,5 +33,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Serving on ${PORT}`);
 });
