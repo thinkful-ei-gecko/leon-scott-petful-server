@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha --require test/setup.js",
+    "test": "mocha",
     "start": "nodemon src/server.js"
   },
   "dependencies": {
