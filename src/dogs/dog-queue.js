@@ -72,26 +72,26 @@ const dogQ = {
 
   dogAdopted() {
     const dog = this.dQ.dequeue();
-    this.adoptedDogs.enqueue(dog);
+    this.dQ.enqueue(dog);
     return dog;
   },
 
-  adoptedDogs: new Queue(),
+  // adoptedDogs: new Queue(),
 
-  addDogtoAdopted(dog) {
-    this.adoptedDogs.enqueue(dog);
-  },
-  returnRecentDogs() {
-    let i = 0;
-    const recentDogs = [];
-    while (!qHelp.isEmpty(this.adoptedDogs) && i < 3) {
-      const dog = this.adoptedDogs.dequeue();
-      recentDogs.push(dog);
-      this.dQ.enqueue(dog);
-      i += 1;
-    }
-    return recentDogs;
-  },
+  // addDogtoAdopted(dog) {
+  //   this.adoptedDogs.enqueue(dog);
+  // },
+  // returnRecentDogs() {
+  //   let i = 0;
+  //   const recentDogs = [];
+  //   while (!qHelp.isEmpty(this.adoptedDogs) && i < 3) {
+  //     const dog = this.adoptedDogs.dequeue();
+  //     recentDogs.push(dog);
+  //     this.dQ.enqueue(dog);
+  //     i += 1;
+  //   }
+  //   return recentDogs;
+  // },
 };
 
 module.exports = dogQ;
