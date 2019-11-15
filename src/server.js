@@ -2,12 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const dogsRouter = require('./dogs/dogs-router');
 const catsRouter = require('./cats/cats-router');
+const {PORT, CLIENT_ORIGIN } = require('./config');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: CLIENT_ORIGIN,
+}));
 
 app.use('/api/dog', dogsRouter);
-// app.use('/api/cat', catsRouter);
+app.use('/api/cat', catsRouter);
 
 // Catch-all 404
 app.use((req, res, next) => {
@@ -27,6 +30,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8080, () => {
-  console.log('Serving on 8080');
+app.listen(PORT, () => {
+  console.log(`Serving on ${PORT}`);
 });
