@@ -12,8 +12,13 @@ dogsRouter
   })
 
   .delete((req, res) => {
-    dogQ.dogAdopted();
     res.send(dogQ.dogAdopted());
+  });
+
+dogsRouter
+  .route('/adopted')
+  .get((req, res) => {
+    res.send(dogQ.returnRecentDogs());
   });
 
 module.exports = dogsRouter;

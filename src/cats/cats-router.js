@@ -15,4 +15,10 @@ catsRouter
     res.send(catQ.catAdopted());
   });
 
+catsRouter
+  .route('/adopted')
+  .get((req, res) => {
+    res.send(catQ.returnRecentCats());
+  });
+
 module.exports = catsRouter;

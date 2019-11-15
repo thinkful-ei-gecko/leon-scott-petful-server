@@ -53,7 +53,27 @@ const catQ = {
   },
 
   catAdopted() {
-    return this.cQ.dequeue();
+    const cat = this.cQ.dequeue();
+    this.adoptedCats.enqueue(cat);
+    return cat;
+  },
+
+  adoptedCats: new Queue(),
+
+  addCattoAdopted(cat) {
+    this.adoptedCats.enqueue(cat);
+  },
+
+  returnRecentCats() {
+    let i = 0;
+    const recentCats = [];
+    while (!qHelp.isEmpty(this.adoptedCats) && i < 3) {
+      const cat = this.adoptedCats.dequeue();
+      recentCats.push(cat);
+      this.cQ.enqueue(cat);
+      i += 1;
+    }
+    return recentCats;
   },
 };
 

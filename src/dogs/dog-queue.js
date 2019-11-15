@@ -39,6 +39,24 @@ const dogQ = {
       breed: 'Toy Poodle',
       story: 'Lieutenant Wellington served admirably in WWII in the 42nd Infantry. He is now looking to explore what else the world has to offer and wants to find a home in America',
     },
+    {
+      imageURL: 'http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures_2.jpg',
+      imageDesc: 'Keeshond in snow',
+      name: 'Scarface',
+      sex: 'M',
+      age: 12,
+      breed: 'Keeshond',
+      story: 'Say hello to my little friend, Scarface. He has a cocaine problem.',
+    },
+    {
+      imageURL: 'http://cdn.akc.org/content/article-body-image/pwc_dog_pictures_.jpg',
+      imageDesc: 'Corgi in the grass',
+      name: 'Isabelle',
+      sex: 'F',
+      age: 3,
+      breed: 'Corgi',
+      story: 'Isabelle is a quantum puppy. She is both here and there until her position is observed. As such, you will share here with her other family. Expect her half the time.',
+    },
   ],
 
   dQ: new Queue(),
@@ -53,7 +71,26 @@ const dogQ = {
   },
 
   dogAdopted() {
-    return this.dQ.dequeue();
+    const dog = this.dQ.dequeue();
+    this.adoptedDogs.enqueue(dog);
+    return dog;
+  },
+
+  adoptedDogs: new Queue(),
+
+  addDogtoAdopted(dog) {
+    this.adoptedDogs.enqueue(dog);
+  },
+  returnRecentDogs() {
+    let i = 0;
+    const recentDogs = [];
+    while (!qHelp.isEmpty(this.adoptedDogs) && i < 3) {
+      const dog = this.adoptedDogs.dequeue();
+      recentDogs.push(dog);
+      this.dQ.enqueue(dog);
+      i += 1;
+    }
+    return recentDogs;
   },
 };
 
