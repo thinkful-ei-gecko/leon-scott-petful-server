@@ -33,10 +33,6 @@ peepsRouter
     peepQ.addPersonToQ(newPerson);
     res
       .sendStatus(201);
-    // .then((person) => {
-    //   res
-    //     .send(person);
-    // });
   });
 
 module.exports = peepsRouter;

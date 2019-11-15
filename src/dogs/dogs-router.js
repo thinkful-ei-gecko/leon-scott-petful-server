@@ -8,17 +8,17 @@ dogQ.populateQueue();
 dogsRouter
   .route('/')
   .get((req, res) => {
-    res.send(dogQ.viewTopDog());
+    res.status(200).send(dogQ.viewTopDog());
   })
 
   .delete((req, res) => {
-    res.send(dogQ.dogAdopted());
+    res.status(200).send(dogQ.dogAdopted());
   });
 
 dogsRouter
   .route('/adopted')
   .get((req, res) => {
-    res.send(dogQ.returnRecentDogs());
+    res.status(200).send(dogQ.returnRecentDogs());
   });
 
 module.exports = dogsRouter;

@@ -8,17 +8,17 @@ catQ.populateQueue();
 catsRouter
   .route('/')
   .get((req, res) => {
-    res.send(catQ.viewTopCat());
+    res.status(200).send(catQ.viewTopCat());
   })
 
   .delete((req, res) => {
-    res.send(catQ.catAdopted());
+    res.status(200).send(catQ.catAdopted());
   });
 
 catsRouter
   .route('/adopted')
   .get((req, res) => {
-    res.send(catQ.returnRecentCats());
+    res.status(200).send(catQ.returnRecentCats());
   });
 
 module.exports = catsRouter;
