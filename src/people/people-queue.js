@@ -64,20 +64,6 @@ const peepQ = {
     return person;
   },
 
-  // adopters: new Queue(),
-
-  // returnRecentAdopters() {
-  //   let i = 0;
-  //   const recentPeeps = [];
-  //   while (!qHelp.isEmpty(this.adopters) && i < 3) {
-  //     const person = this.adopters.dequeue();
-  //     recentPeeps.push(person);
-  //     this.pQ.enqueue(person);
-  //     i += 1;
-  //   }
-  //   return recentPeeps;
-  // },
-
   getQueue() {
     const waitingPeeps = [];
     let currNode = this.pQ.first;

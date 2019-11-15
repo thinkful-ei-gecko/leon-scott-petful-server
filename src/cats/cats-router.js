@@ -15,10 +15,4 @@ catsRouter
     res.status(200).send(catQ.catAdopted());
   });
 
-catsRouter
-  .route('/adopted')
-  .get((req, res) => {
-    res.status(200).send(catQ.returnRecentCats());
-  });
-
 module.exports = catsRouter;

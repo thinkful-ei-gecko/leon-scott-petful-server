@@ -15,10 +15,4 @@ dogsRouter
     res.status(200).send(dogQ.dogAdopted());
   });
 
-dogsRouter
-  .route('/adopted')
-  .get((req, res) => {
-    res.status(200).send(dogQ.returnRecentDogs());
-  });
-
 module.exports = dogsRouter;

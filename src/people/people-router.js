@@ -18,7 +18,7 @@ peepsRouter
     res.send(peepQ.viewNextPerson());
   })
   .delete((req, res) => {
-    res.send(peepQ.returnRecentAdopters());
+    res.send(peepQ.personAdopted());
   });
 
 peepsRouter
