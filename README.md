@@ -1,5 +1,23 @@
 # Express Boilerplate!
 
+# About
+
+Petful server is designed to work with the Petful client interface.
+Petful is a first in first out adoption agency. This server stores and serves the queue for dogs, cats, and people.
+
+GET
+/api/dog/ returns the next dog
+/api/cat/ returns the next cat
+/api/people/next returns the next person
+/api/people/all returns all people
+
+DELETE - when a pet is adopted, they get deleted from the list
+/api/dog/ removes the dog from the queue and returns it
+/api/cat/ removes the next cat from the queue and returns it
+/api/people/next removes the next person from the queue and returns it
+
+This app was built using Node, Express, and React
+
 This is a boilerplate project used for starting new projects!
 
 ## How do set up?
