@@ -55,7 +55,9 @@ const peepQ = {
   },
   personAdopted() {
     const person = this.pQ.dequeue();
-    this.pQ.enqueue(person);
+    if (person.wants) {
+      this.pQ.enqueue(person);
+    }
     return person;
   },
 
